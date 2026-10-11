@@ -1,0 +1,585 @@
+/* ==========================================
+   GLOBAL
+========================================== */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+@font-face {
+  font-family: "PlanetKosmos";
+  src: url("../fonts/planetkosmos.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "LinuxLibertine";
+  src: url("../fonts/linuxlibertine-ri.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Univers";
+  src: url("../fonts/univers-regular.woff2") format("woff2");
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: "Univers";
+  src: url("../fonts/univers-bold.woff2") format("woff2");
+  font-weight: bold;
+}
+
+:root {
+  --root-color: black;
+  --primary-color: rgb(249, 65, 26);
+  --secondary-color: blue;
+  --dark-text-color: black;
+  --light-text-color: floralwhite;
+  --radius: 0px;
+  --space: 0px;
+  --focus-ring-color: #2563eb;
+}
+
+body {
+  font-family: Univers, Arial, sans-serif;
+  color: var(--dark-text-color);
+  background-color: var(--root-color);
+}
+
+a {
+  color: var(--light-text-color);
+}
+
+abbr {
+  text-decoration: none;
+}
+
+strong {
+  font-weight: bold;
+}
+
+.button:focus-visible, 
+.hotspot:focus-visible {
+  outline: 3px solid var(--focus-ring-color);
+  outline-offset: 2px;
+}
+
+/* ==========================================
+   TOP BAR (HEADER & NAV)
+========================================== */
+
+#top-bar {
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  color: var(--light-text-color);
+  height: 44px;
+}
+
+/* ==========================================
+   HEADER
+========================================== */
+
+header {
+  display: flex;
+  align-items: center;
+  flex-direction: row-reverse;
+}
+
+#monogram {
+  font-family: PlanetKosmos;
+  text-decoration: none;
+  color: var(--primary-color);
+  font-size: 1.4rem;
+  padding: 3px 10px 0px 0px;
+}
+
+header ul {
+  list-style-type: none;
+  padding: 0 9px;
+}
+
+header ul li {
+  text-align: right;
+  font-family: Univers;
+  font-size: 0.7rem;
+}
+
+/* ==========================================
+   NAV
+========================================== */
+
+nav {
+  font-family: LinuxLibertine;
+  font-size: 0.8rem;
+}
+
+nav ul {
+  list-style-type: none;
+  display: flex;
+  align-items: center;
+}
+
+nav ul li a {
+  display: block;
+  padding: 0 6px;
+  color: var(--light-text-color);
+}
+
+.nav-active {
+  color: var(--primary-color);
+}
+
+#hamburger-btn {
+  display: none;
+  background: none;
+  border: none;
+  color: var(--text-color2);
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+
+  #hamburger-btn {
+    display: block;
+  }
+
+  nav ul {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 44px;
+    left: 0;
+    width: 100%;
+    background-color: var(--bg-color);
+    border-bottom: 2px solid var(--bold-color);
+    z-index: 100;
+  }
+
+  nav ul.show {
+    display: flex;
+  }
+
+  nav ul li a {
+    padding: 15px;
+    text-align: center;
+    background-color: rgb(from var(--root-color) r g b / 0.8);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
+}
+
+
+/* ==========================================
+   FOOTER
+========================================== */
+
+footer {
+  color: var(--light-text-color);
+  font-size: 0.7rem;
+  min-height: 44px;
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+footer ul {
+  list-style-type: none;
+  display: flex;
+  justify-content: space-between;
+}
+
+address {
+  display: inline;
+  font-style: normal;
+}
+
+/* ==========================================
+   INDEX
+========================================== */
+
+h1 {
+  font-size: 3rem;
+  background-color: var(--primary-color);
+}
+
+.index-top-row {
+  display: flex;
+}
+
+.index-top-row aside {
+  max-width: 300px;
+  color: var(--primary-color);
+  font-family: linuxlibertine;
+  font-weight: 1000;
+  font-size: 2rem;
+  padding: 5px;
+}
+
+.index-top-row aside q {
+  margin-left: 35px;
+}
+
+.index-section {
+  padding: 10px 10px;
+  margin-bottom: 12px;
+  background-color: var(--primary-color);
+  min-height: 70dvh;
+}
+
+.index-section p, .index-section li {
+  max-width: 980px;
+  font-size: 1.3rem;
+  margin-bottom: 15px;
+}
+
+#my-photo {
+  float: left;
+  width: 25%;
+  height: auto;
+  margin: 0px 10px 0px 0px;
+}
+
+#key-list {
+  color: var(--dark-text-color);
+}
+
+/* ==========================================
+   CV
+========================================== */
+
+.cv-main h1 {
+  background-color: var(--root-color);
+  color: var(--primary-color);
+}
+
+.cv-columns {
+  display: flex;
+  justify-content: center;
+  max-width: 50%;
+  margin: 0 auto;
+}
+
+.cv-section {
+  height: 80dvh;
+}
+
+#cv-section1 {
+  flex: 0 0 35%;
+  background-color: var(--primary-color);
+  padding: 5px;
+}
+
+#cv-section1 a {
+  color: var(--dark-text-color);
+}
+
+#cv-section2 {
+  flex: 0 0 65%;
+  background-color: var(--secondary-color);
+  color: var(--light-text-color);
+  padding: 5px;
+}
+
+#my-photo2 {
+  width: 50%;
+  height: auto;
+}
+
+.cv-double-column {
+  display: flex;
+  gap: 2rem;
+}
+
+.cv-section ul {
+  list-style: none;
+}
+
+.cv-double-column ul:nth-child(2) {
+  text-align: right;
+}
+
+/* ==========================================
+   WORKSPACE
+========================================== */
+
+.workspace-section {
+  background-color: var(--primary-color);
+  min-height: 80dvh;
+  display: flex;
+}
+
+.workspace-image {
+  position: relative;
+  width: 50%;
+  margin: auto;
+}
+
+.workspace-image img {
+  width: 100%;
+  height: auto;
+  display: block; /* From seminar: figure is a little bigger than img, because img is a line element; this fixes that. */
+}
+
+.hotspot {
+  width: 1rem;
+  height: 1rem;
+  position: absolute;
+  left: var(--x);
+  top: var(--y);
+  transform: translate(-50%, -50%);
+}
+
+.hotspot__dot {
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  border: 1px solid var(--light-text-color);
+  background: var(--root-color);
+  cursor: pointer;
+}
+
+.hotspot__panel {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 16rem;
+  background: var(--light-text-color);
+  border-left: 4px solid var(--root-color);
+  box-shadow: 0 0.5rem 1.5rem var(--root-color);
+  opacity: 0;
+  visibility: hidden;
+  transition:
+    opacity 0.3s,
+    visibility 0.3s;
+}
+
+.hotspot:hover .hotspot__panel,
+.hotspot:focus-within .hotspot__panel {
+  opacity: 1;
+  visibility: visible;
+}
+
+.hotspot:hover,
+.hotspot:focus-within {
+  z-index: 10;
+}
+
+.hotspot--left .hotspot__panel {
+  left: auto;
+  right: 0;
+}
+
+.hotspot__panel h2 {
+  margin: 0 0 0.25rem;
+  font-size: 1rem;
+}
+
+.hotspot__panel p {
+  margin: 0;
+}
+
+@media (max-width: 768px) {
+  .hotspot {
+    position: static;
+    width: auto;
+    height: 0;
+    transform: none;
+  }
+
+  .hotspot__dot {
+    position: absolute;
+    left: var(--x);
+    top: var(--y);
+    width: 1rem;
+    height: 1rem;
+    transform: translate(-50%, -50%);
+  }
+
+  .workspace-image .hotspot__panel {
+    top: 100%;
+    left: 0;
+    right: 0;
+    width: auto;
+    height: 8rem;
+    overflow: auto;
+    margin-bottom: 9rem
+  }
+
+  .hotspot:first-of-type .hotspot__panel {
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+/* ==========================================
+   SCHEDULE
+========================================== */
+
+.schedule-section {
+  background-color: var(--primary-color);
+  min-height: 80dvh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.schedule-section button {
+  background-color: var(--light-text-color);
+  padding: 4px 20px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  margin-bottom: 8px;
+}
+
+.schedule-section button:hover {
+  background-color: #f0f0f0;
+  transform: translateY(-1px);
+}
+
+.schedule-section button:active {
+  transform: translateY(0);
+}
+
+.table-container {
+  width: 100%;
+  overflow-x: auto;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+}
+
+.schedule-table {
+  background-color: transparent;
+  border: 2px solid var(--root-color);
+  color: var(--dark-text-color);
+  width: 70%;
+  max-width: 1000px;
+  height: 60dvh;
+}
+
+.schedule-table th {
+  text-align: left;
+  vertical-align: center;
+  border-bottom: 2px solid var(--root-color);
+}
+
+.schedule-table td {
+  text-align: right;
+  vertical-align: bottom;
+}
+
+.schedule-table td:first-child {
+  text-align: center;
+  vertical-align: middle;
+}
+
+.schedule-table tr:nth-of-type(odd) td:first-child {
+  background-color: rgb(200, 45, 16);
+}
+
+.schedule-lecture {
+  background-color: var(--root-color);
+  color: var(--light-text-color);
+}
+
+.schedule-seminar {
+  background-color: var(--light-text-color);
+}
+
+.schedule-pe {
+  background-color: var(--secondary-color);
+  color: var(--light-text-color);
+}
+
+#semester-progress {
+  font-weight: bold;
+}
+
+progress {
+  appearance: none;
+  -webkit-appearance: none;
+  border-radius: 9999px;
+  overflow: hidden;
+}
+
+progress::-webkit-progress-bar {
+  background-color: var(--root-color);
+}
+
+progress::-webkit-progress-value {
+  background-color: var(--light-text-color);
+  border-radius: 9999px;
+}
+
+progress::-moz-progress-bar {
+  background-color: var(--light-text-color);
+  border-radius: 9999px;
+}
+
+/* ==========================================
+   MAP
+========================================== */
+
+.map-section {
+  background-color: var(--primary-color);
+  min-height: 80dvh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.map-container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  max-width: 1200px;
+  margin: 0 auto;
+  gap: 10px;
+}
+
+#map {
+  height: 550px;
+  flex: 10;
+}
+
+.sidebar {
+  flex: 1;
+}
+
+.control-group {
+  padding-bottom: 15px;
+}
+
+.map-container button {
+  background-color: var(--light-text-color);
+  padding: 4px 20px;
+  font-size: 0.5rem;
+  font-weight: bold;
+  cursor: pointer;
+  margin-bottom: 8px;
+}
+
+.map-container button:hover {
+  background-color: #f0f0f0;
+  transform: translateY(-1px);
+}
+
+.map-container button:active {
+  transform: translateY(0);
+}
+
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

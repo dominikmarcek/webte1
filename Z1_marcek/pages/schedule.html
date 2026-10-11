@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="sk">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rozvrh ✦ Dominik Marček</title>
+    <meta name="description" content="Dominik Marček je softvérový inžinier a hudobný producent. Tu sa dozviete kedy má voľný čas.">
+
+    <meta property="og:title" content="Dominik Marček - rozvrh">
+    <meta property="og:description" content="Dominik Marček je softvérový inžinier a hudobný producent. Tu sa dozviete kedy má voľný čas.">
+    <meta property="og:image" content="../img/og-image.png">
+
+    <link rel="stylesheet" href="../css/styles.css">
+
+    <link rel="icon" type="image/png" href="../favicon.png">
+
+    <script src="../js/script.js" defer></script>
+    <script src="../js/schedule.js" defer></script>
+  </head>
+
+  <body>
+    <div id="top-bar">
+      <header>
+        <a id="monogram" href="../">DM</a>
+        <ul>
+          <li>Dominik Marček</li>
+          <li>študent api & umelec</li>
+        </ul>
+      </header>
+
+      <nav>
+        <button id="hamburger-btn" aria-label="Toggle navigation menu">☰</button>
+        <ul id="nav-list">
+          <li><a href="../">domov</a></li>
+          <li><a href="../pages/cv.html">životopis</a></li>
+          <li><a href="../pages/workspace.html">pracovné prostredie</a></li>
+          <li><a class="nav-active" href="../pages/schedule.html">rozvrh</a></li>
+          <li><a href="../pages/map.html">mapa</a></li>
+        </ul>
+      </nav>
+    </div>
+
+    <main>
+      <h1>ROZVRH</h1>
+      <section class="schedule-section">
+        <h2>ROZVRH</h2>
+
+        <div>
+          <button type="button">VŠETKO</button>
+          <button type="button">PREDNÁŠKY</button>
+          <button type="button">CVIČENIA</button>
+        </div>
+
+        <div class="table-container">
+          <table class="schedule-table">
+            <thead>
+              <tr>
+                <th>HODINA</th>
+                <th>PONDELOK</th>
+                <th>UTOROK</th>
+                <th>STREDA</th>
+                <th>ŠTVRTOK</th>
+                <th>PIATOK</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>7</td>
+                <td rowspan="2"></td>
+                <td></td>
+                <td></td>
+                <td rowspan="3"></td>
+                <td rowspan="2"></td>
+              </tr>
+              <tr>
+                <td>8</td>
+                <td class="schedule-seminar" rowspan="2">aza</td>
+                <td class="schedule-lecture" rowspan="2">OS</td>
+              </tr>
+              <tr>
+                <td>9</td>
+                <td class="schedule-seminar" rowspan="2">os</td>
+                <td class="schedule-seminar">aza</td>
+              </tr>
+              <tr>
+                <td>10</td>
+                <td class="schedule-lecture" rowspan="2">WEBTE1</td>
+                <td class="schedule-lecture" rowspan="2">AZA</td>
+                <td class="schedule-seminar">swi</td>
+                <td rowspan="11"></td>
+              </tr>
+              <tr>
+                <td>11</td>
+                <td class="schedule-seminar" rowspan="2">webte1</td>
+                <td rowspan="10"></td>
+              </tr>
+              <tr>
+                <td>12</td>
+                <td rowspan="3"></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>13</td>
+                <td class="schedule-pe">tk5</td>
+                <td class="schedule-lecture" rowspan="2">WEBTE1</td>
+              </tr>
+              <tr>
+                <td>14</td>
+                <td rowspan="7"></td>
+              </tr>
+              <tr>
+                <td>15</td>
+                <td class="schedule-lecture" rowspan="2">SWI</td>
+                <td rowspan="6"></td>
+              </tr>
+              <tr>
+                <td>16</td>
+              </tr>
+              <tr>
+                <td>17</td>
+                <td class="schedule-seminar">swi</td>
+              </tr>
+              <tr>
+                <td>18</td>
+                <td rowspan="3"></td>
+              </tr>
+              <tr>
+                <td>19</td>
+              </tr>
+              <tr>
+                <td>20</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <label id="semester-progress">
+          Progres semestra: <progress id="semester-progress-bar" value="0" max="100">0%</progress>
+          <span id="semester-percentage-text">0%</span>
+        </label>
+      </section>
+    </main>
+
+    <footer>
+      <ul>
+        <li id="footer-address">© 2026 Dominik Marček // <address>
+        <a href="https://www.linkedin.com/in/dominik-marcek/">LinkedIn</a></address></li>
+      </ul>
+    </footer>
+  </body>
+</html>

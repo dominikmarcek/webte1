@@ -1,0 +1,20 @@
+@media print {
+  nav, #top-bar, header, footer, h1 {
+    display: none !important;
+  }
+
+  body, .cv-main, .cv-section {
+    background-color: white !important;
+    color: black !important;
+  }
+
+  @page {
+    size: A4;
+    margin: 1cm;
+  }
+
+  .cv-main, .cv-section, ul, li {
+    page-break-inside: avoid;
+    break-inside: avoid;
+  }
+}

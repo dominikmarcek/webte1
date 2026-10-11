@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="sk">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mapa ✦ Dominik Marček</title>
+    <meta name="description" content="Dominik Marček je softvérový inžinier a hudobný producent. Tu sa dozviete kde sa najčastejšie nachádza.">
+
+    <meta property="og:title" content="Dominik Marček - mapa">
+    <meta property="og:description" content="Dominik Marček je softvérový inžinier a hudobný producent. Tu sa dozviete kde sa najčastejšie nachádza.">
+    <meta property="og:image" content="../img/og-image.png">
+
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+
+    <link rel="icon" type="image/png" href="../favicon.png">
+
+    <script src="../js/script.js" defer></script>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" defer></script>
+    <script src="../js/map.js" defer></script>
+  </head>
+
+  <body>
+    <div id="top-bar">
+      <header>
+        <a id="monogram" href="../">DM</a>
+        <ul>
+          <li>Dominik Marček</li>
+          <li>študent api & umelec</li>
+        </ul>
+      </header>
+
+      <nav>
+        <button id="hamburger-btn" aria-label="Toggle navigation menu">☰</button>
+        <ul id="nav-list">
+          <li><a href="../">domov</a></li>
+          <li><a href="../pages/cv.html">životopis</a></li>
+          <li><a href="../pages/workspace.html">pracovné prostredie</a></li>
+          <li><a href="../pages/schedule.html">rozvrh</a></li>
+          <li><a class="nav-active" href="../pages/map.html">mapa</a></li>
+        </ul>
+      </nav>
+    </div>
+
+    <main>
+      <h1>MAPA</h1>
+      <section class="map-section">
+        <div class="map-container">
+          <div id="map"></div>
+          <aside class="sidebar">
+            <div class="control-group">
+              <label for="marker-select"><strong>Vlastné body:</strong></label>
+              <select id="marker-select" disabled>
+                <option value="">-- Najprv pridajte bod --</option>
+              </select>
+            </div>
+
+            <div class="control-group">
+              <label for="destination-select"><strong>Cieľ:</strong></label>
+              <select id="destination-select" disabled>
+                <option value="school">Škola (FEI STU)</option>
+                <option value="home">Bydlisko (Pezinok)</option>
+              </select>
+            </div>
+
+            <button id="clear-btn">Vymazať všetky body</button>
+
+            <div id="result-display"></div>
+
+            <div id="info-panel" class="empty-state">
+              <h2>Prázdny stav</h2>
+              <p>Kliknutím na mapu pridáte bod, ktorý pomenujete. Následne ho budetem môcť vybrať a zmerať vzdialenosť k mojej škole alebo bydlisku.</p>
+            </div>
+          </aside>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <ul>
+        <li id="footer-address">© 2026 Dominik Marček // <address>
+        <a href="https://www.linkedin.com/in/dominik-marcek/">LinkedIn</a></address></li>
+        <li>Zdroj: <a href="https://leafletjs.com">Leaflet</a></li>
+      </ul>
+    </footer>
+  </body>
+</html>
